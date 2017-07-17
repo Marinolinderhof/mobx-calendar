@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 
 // local components
 import AppointmentCard from './AppointmentCard';
@@ -10,6 +11,7 @@ import TimeFromTo from './TimeFromTo';
 import Time from 'components/Time';
 
 const AppointmentItem = props => {
+  console.log('props:', props);
   const { title, desc, start, end, ...rest } = props;
 
   return (
@@ -28,4 +30,4 @@ const AppointmentItem = props => {
     </AppointmentCard>
   );
 };
-export default AppointmentItem;
+export default observer(AppointmentItem);

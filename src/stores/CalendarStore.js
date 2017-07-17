@@ -113,7 +113,6 @@ class CalendarStore {
   }
   persist() {
     autorun(() => {
-      console.log('toJson:', this.toJson);
       storage.set('CalendarStore', this.toJson);
     });
   }
