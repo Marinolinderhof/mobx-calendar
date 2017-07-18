@@ -1,21 +1,21 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import HourItem from '../index';
+import Hour from '../Hour';
 
-describe('<HourItem />', () => {
+describe('<Hour />', () => {
   it('should render a prop', () => {
     const id = 'testId';
-    const renderedComponent = shallow(<HourItem id={id} />);
+    const renderedComponent = shallow(<Hour id={id} />);
     expect(renderedComponent.prop('id')).toEqual(id);
   });
 
   it('should render its text', () => {
     const children = 'Text';
     const renderedComponent = shallow(
-      <HourItem>
+      <Hour>
         {children}
-      </HourItem>
+      </Hour>
     );
     expect(renderedComponent.contains(children)).toBe(true);
   });

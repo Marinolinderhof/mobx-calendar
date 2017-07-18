@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { observer, inject } from 'mobx-react';
 
 // import components
-import HourItem from 'components/Hour';
+import HourItem from 'components/HourItem';
 import AppointmentItem from 'components/AppointmentItem';
 
 import Wrapper from './Wrapper';

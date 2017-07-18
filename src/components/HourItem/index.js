@@ -7,11 +7,11 @@ import Hour from './Hour';
 import TimeSlots from 'components/TimeSlots';
 
 const HourItem = props => {
-  const { hour } = props;
+  const { hour, ...rest } = props;
 
   const timeInHour = moment({ hour }).format('H:mm');
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <Hour>
         {timeInHour}
       </Hour>

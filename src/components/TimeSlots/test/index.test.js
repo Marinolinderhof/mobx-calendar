@@ -1,22 +1,23 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import DayCard from '../index';
+import TimeSlots from '../index';
 
-describe('<DayCard />', () => {
-  it('should render a prop', () => {
-    const id = 'testId';
-    const renderedComponent = shallow(<DayCard id={id} />);
-    expect(renderedComponent.prop('id')).toEqual(id);
+describe('<TimeSlots />', () => {
+  const minProps = { amount: 2 };
+
+  it('should render the component if no items are passed', () => {
+    const renderedComponent = shallow(<TimeSlots {...minProps} />);
+    expect(renderedComponent.length).toEqual(1);
   });
 
-  it('should render its text', () => {
-    const children = 'Text';
-    const renderedComponent = shallow(
-      <DayCard>
-        {children}
-      </DayCard>
-    );
-    expect(renderedComponent.contains(children)).toBe(true);
+  it("Shouldn't have a  prop called amount", () => {
+    const renderedComponent = shallow(<TimeSlots {...minProps} />);
+    expect(renderedComponent.prop('amount')).toBeUndefined();
+  });
+
+  it('Should have Timeslot items equal to amount', () => {
+    const renderedComponent = shallow(<TimeSlots {...minProps} />);
+    expect(renderedComponent.children().length).toEqual(minProps.amount);
   });
 });
